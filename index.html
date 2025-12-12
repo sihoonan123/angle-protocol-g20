@@ -3,19 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M_Environment Angle Protocol</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>M_Environment Protocol Prototype</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        #feedback { 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            margin: 20px auto; 
+            padding: 10px; 
+            border: 2px solid #ccc; 
+            width: 80%; 
+            min-height: 50px;
+        }
+        #measureButton {
+            margin-top: 30px; 
+            padding: 10px 20px; 
+            font-size: 1.1em; 
+            background-color: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+        }
+        /* 레벨 미터 UI (선택 사항이지만 안전성 위해 포함) */
+        #levelMeter { 
+            width: 150px; height: 150px; 
+            border: 3px solid #333; 
+            border-radius: 50%; 
+            margin: 30px auto; 
+            position: relative;
+        }
+        #levelMeterDot { 
+            width: 20px; height: 20px; 
+            background-color: blue; 
+            border-radius: 50%; 
+            position: absolute; 
+            top: 50%; left: 50%; 
+            transform: translate(-50%, -50%); 
+            transition: transform 0.1s;
+        }
+    </style>
 </head>
 <body>
 
+    <h1>각도 및 크기 측정 프로토콜</h1>
+
+    <div id="levelMeter">
+        <div id="levelMeterDot"></div>
+    </div>
+
     <div id="feedback">각도 센서 준비 중...</div>
 
-    <div id="levelMeterContainer">
-        <div id="levelMeterDot"></div> 
-    </div>
-    <button id="measureButton" style="margin-top: 30px; padding: 10px; font-size: 1.1em; display: block;">
-        각도 최적화 완료! 크기 측정 시작
-    </button>
+    <button id="measureButton">각도 최적화 완료! 크기 측정 시작</button>
+
     <script src="script.js"></script>
+    
 </body>
 </html>
+
